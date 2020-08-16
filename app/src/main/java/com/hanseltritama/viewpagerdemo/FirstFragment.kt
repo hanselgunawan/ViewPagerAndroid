@@ -2,11 +2,13 @@ package com.hanseltritama.viewpagerdemo
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.first_fragment.*
+import kotlinx.android.synthetic.main.first_fragment.view.*
 
 class FirstFragment : Fragment() {
 
@@ -39,7 +41,9 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.first_fragment, container, false)
-//        tv_first_fragment.text = "$page -- $title"
+        Log.d("HANSEL int", page.toString())
+        Log.d("HANSEL str", title)
+        view.tv_first_fragment.text = "$page -- $title"
         return view
     }
 

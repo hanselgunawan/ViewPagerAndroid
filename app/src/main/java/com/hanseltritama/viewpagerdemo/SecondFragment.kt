@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.first_fragment.*
 import kotlinx.android.synthetic.main.second_fragment.*
+import kotlinx.android.synthetic.main.second_fragment.view.*
 
 class SecondFragment() : Fragment() {
 
@@ -38,7 +39,7 @@ class SecondFragment() : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.second_fragment, container, false)
-//        tv_second_fragment.text = "$page -- $title"
+        view.tv_second_fragment.text = "$page -- $title"
         return view
     }
 

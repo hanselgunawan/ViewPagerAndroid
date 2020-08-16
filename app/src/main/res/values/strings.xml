@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">View Pager Demo</string>
+    <string name="first_fragment_string">First Fragment</string>
+    <string name="second_fragment_string">Second Fragment</string>
 </resources>

@@ -10,15 +10,17 @@ import kotlinx.android.synthetic.main.first_fragment.*
 
 class FirstFragment : Fragment() {
 
-    companion object {
-        private lateinit var title: String
-        private var page = 0
+    private lateinit var title: String
+    private var page = 0
 
-        fun newInstance(page:Int, title:String) : FirstFragment {
+    companion object {
+
+        fun newInstance(page: Int, title: String) : FirstFragment {
             val firstFragment = FirstFragment()
-            val args = Bundle()
-            args.putInt("someInt", page)
-            args.putString("someTitle", title)
+            val args = Bundle().apply {
+                putInt("someInt", page)
+                putString("someTitle", title)
+            }
             firstFragment.arguments = args
             return firstFragment
         }
@@ -26,8 +28,8 @@ class FirstFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        page = arguments!!.getInt("someInt", 0)
-        title = arguments!!.getString("someTitle").toString()
+        page = arguments?.getInt("someInt")!!
+        title = arguments?.getString("someTitle")!!
     }
 
     @SuppressLint("SetTextI18n")
@@ -37,7 +39,7 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.first_fragment, container, false)
-        tvLabel.text = "$page -- $title"
+//        tv_first_fragment.text = "$page -- $title"
         return view
     }
 

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.first_fragment.*
+import kotlinx.android.synthetic.main.second_fragment.*
 
 class SecondFragment() : Fragment() {
 
@@ -15,19 +16,19 @@ class SecondFragment() : Fragment() {
         private var page = 0
 
         fun newInstance(page: Int, title: String) : SecondFragment {
-            val firstFragment = SecondFragment()
+            val secondFragment = SecondFragment()
             val args = Bundle()
             args.putInt("someInt", page)
             args.putString("someTitle", title)
-            firstFragment.arguments = args
-            return firstFragment
+            secondFragment.arguments = args
+            return secondFragment
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        page = arguments!!.getInt("someInt", 0)
-        title = arguments!!.getString("someTitle").toString()
+        page = arguments?.getInt("someInt", 0) ?: 0
+        title = arguments?.getString("someTitle").toString()
     }
 
     @SuppressLint("SetTextI18n")
@@ -37,7 +38,7 @@ class SecondFragment() : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.second_fragment, container, false)
-        tvLabel.text = "$page -- $title"
+//        tv_second_fragment.text = "$page -- $title"
         return view
     }
 

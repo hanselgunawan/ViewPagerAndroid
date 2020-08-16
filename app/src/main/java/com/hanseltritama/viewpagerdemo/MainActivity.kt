@@ -3,7 +3,7 @@ package com.hanseltritama.viewpagerdemo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentPagerAdapter
-import kotlinx.android.synthetic.main.first_fragment.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
